@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benhur Okur - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Benhur Okur</h1>
+    <nav id="navbar">
+      <div class="menu-toggle" id="mobile-menu">☰</div>
+      <div class="menu-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="darkToggle">🌓</button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero animate">
+    <div>
+      <h2>Hi, I'm a Computer Engineering Student</h2>
+      <p>Motivated and passionate about software development and problem-solving. I bring hands-on experience in Java, JavaScript, and C from academic and freelance projects. You can check all my work via my GitHub profile.</p>
+      <a href="Benhur Rahman Okur CV.pdf" class="cv-button" download>Download My CV</a>
+    </div>
+  </section>
+
+  <section id="about" class="animate">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-container">
+      <div class="about-text">
+        <p>I'm a Computer Engineering student at Izmir University of Economics (2022–Present). I’m proficient in Java, JavaScript, and C, with additional experience in Kotlin, MySQL, SQLite, HTML, CSS, Node.js, and React.js. I’ve worked on various desktop and console applications that focus on real-world challenges.</p>
+        <p>I value teamwork, leadership, effective communication, and time management. My goal is to contribute, learn, and grow in dynamic tech environments.</p>
+        <p><strong>Languages:</strong> English (Intermediate), Turkish (Native), German (Basic)</p>
+      </div>
+      <div class="about-image">
+        <img src="vesikalık.jpeg" alt="Benhur Okur Portrait" />
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="animate">
+    <h2 class="section-title">My Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">
+        <img src="icons/java.svg" alt="Java" />
+        <p>Java</p>
+      </div>
+      <div class="skill">
+        <img src="icons/javascript.svg" alt="JavaScript" />
+        <p>JavaScript</p>
+      </div>
+      <div class="skill">
+        <img src="icons/c.svg" alt="C" />
+        <p>C</p>
+      </div>
+      <div class="skill">
+        <img src="icons/kotlin.svg" alt="Kotlin" />
+        <p>Kotlin</p>
+      </div>
+      <div class="skill">
+        <img src="icons/mysql.svg" alt="MySQL" />
+        <p>MySQL</p>
+      </div>
+      <div class="skill">
+        <img src="icons/html.svg" alt="HTML" />
+        <p>HTML</p>
+      </div>
+      <div class="skill">
+        <img src="icons/css.svg" alt="CSS" />
+        <p>CSS</p>
+      </div>
+      <div class="skill">
+        <img src="icons/nodejs.svg" alt="Node.js" />
+        <p>Node.js</p>
+      </div>
+      <div class="skill">
+        <img src="icons/react.svg" alt="React.js" />
+        <p>React.js</p>
+      </div>
+      <div class="skill">
+        <img src="icons/team.svg" alt="Teamwork" />
+        <p>Teamwork</p>
+      </div>
+      <div class="skill">
+        <img src="icons/leadership.svg" alt="Leadership" />
+        <p>Leadership</p>
+      </div>
+      <div class="skill">
+        <img src="icons/communication.svg" alt="Communication" />
+        <p>Communication</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="animate">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="images/syllabus-manager.png" alt="Syllabus Manager Screenshot" />
+        <h3>Syllabus Manager</h3>
+        <p>Java, JavaFX, SQLite – A desktop app that lets instructors personalize and manage interactive syllabi. Data is stored locally with SQLite.</p>
+      </div>
+      <div class="project">
+        <img src="images/misti-game.png" alt="Misti Game Screenshot" />
+        <h3>Misti Game</h3>
+        <p>Java, OOP, File I/O – A Turkish card game project where you play against bot players. Features novice, regular, and expert bot levels.</p>
+      </div>
+      <div class="project">
+        <img src="images/book-catalog.png" alt="Book Catalog Screenshot" />
+        <h3>Book Catalog</h3>
+        <p>Java, JavaFX, JSON – Book management application with options to import, export, and edit book data. Supports cover images, ISBN, and more.</p>
+      </div>
+      <div class="project">
+        <img src="images/ringbuffer-daemon.png" alt="Daemon System Screenshot" />
+        <h3>Ringbuffer & Daemon System</h3>
+        <p>C, Threads – Developed a multithreaded daemon system using ring buffers for efficient processing. First freelance experience involving thread synchronization and system-level programming.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="animate">
+    <h2 class="section-title">Contact</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="social-links">
+      <a href="https://github.com/benhur-okur" target="_blank"><img src="icons/github.svg" alt="GitHub" /></a>
+      <a href="https://linkedin.com/in/benhurokur35" target="_blank"><img src="icons/linkedin.svg" alt="LinkedIn" /></a>
+    </div>
+    <div style="margin-top: 20px; font-size: 0.9rem;">
+      <p><strong>Phone:</strong> +90 530 682 06 46</p>
+      <p><strong>Email:</strong> benhurokur0@gmail.com</p>
+      <p><strong>Location:</strong> Izmir, Turkey</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

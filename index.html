@@ -3,145 +3,420 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Benhur Okur - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="Benhur Okur — Software Engineer focused on backend systems, AI-powered products, and full-stack development. Computer Engineering at Izmir University of Economics." />
+  <meta name="author" content="Benhur Okur" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Benhur Okur — Software Engineer" />
+  <meta property="og:description" content="Backend systems, AI-powered products, and full-stack development." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://benhur-okur.github.io/Personal-Website/" />
+
+  <title>Benhur Okur — Software Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Benhur Okur</h1>
+  <!-- Animated background -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header id="header">
+    <a href="#hero" class="logo">
+      <span class="logo-mark">BO</span>
+      <span class="logo-text">Benhur Okur</span>
+    </a>
     <nav id="navbar">
-      <div class="menu-toggle" id="mobile-menu">☰</div>
-      <div class="menu-links">
+      <div class="menu-links" id="menuLinks">
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
-        <button id="darkToggle">🌓</button>
+        <a href="BenhurOkur_Resume.pdf" class="nav-resume" download>Resume</a>
       </div>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="menu-toggle icon-btn" id="menuToggle" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </nav>
   </header>
 
-  <section class="hero animate">
-    <div>
-      <h2>Hi, I'm a Computer Engineering Student</h2>
-      <p>Motivated and passionate about software development and problem-solving. I bring hands-on experience in Java, JavaScript, and C from academic and freelance projects. You can check all my work via my GitHub profile.</p>
-      <a href="Benhur Rahman Okur CV.pdf" class="cv-button" download>Download My CV</a>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-inner reveal">
+      <p class="hero-eyebrow"><span class="status-dot"></span> Open to Software Engineering roles · 2026</p>
+      <h1 class="hero-title">
+        Hi, I'm Benhur Okur.<br />
+        I build <span class="gradient-text">backend systems</span> &amp;
+        <span class="gradient-text">AI-powered products</span>.
+      </h1>
+      <p class="hero-sub">
+        Senior Computer Engineering student with hands-on experience in software development,
+        artificial intelligence, and data science. I design full-stack and systems-oriented
+        projects with a focus on secure architecture, practical problem solving, and
+        production-minded design.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View my work</a>
+        <a href="BenhurOkur_Resume.pdf" class="btn btn-ghost" download>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download résumé
+        </a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/benhur-okur" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56v-2.1c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.21 1.84 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.3-5.47-1.3-5.47-5.81 0-1.28.47-2.33 1.23-3.15-.12-.3-.53-1.5.12-3.14 0 0 1-.31 3.3 1.2a11.6 11.6 0 0 1 6 0c2.3-1.51 3.3-1.2 3.3-1.2.65 1.64.24 2.84.12 3.14.77.82 1.23 1.87 1.23 3.15 0 4.52-2.81 5.5-5.49 5.79.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.83.56C20.56 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/benhurokur35" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="mailto:benhurokur0@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+        </a>
+      </div>
     </div>
+    <a href="#about" class="scroll-hint" aria-label="Scroll down">
+      <span></span>
+    </a>
   </section>
 
-  <section id="about" class="animate">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-container">
-      <div class="about-text">
-        <p>I'm a Computer Engineering student at Izmir University of Economics (2022–Present). I’m proficient in Java, JavaScript, and C, with additional experience in Kotlin, MySQL, SQLite, HTML, CSS, Node.js, and React.js. I’ve worked on various desktop and console applications that focus on real-world challenges.</p>
-        <p>I value teamwork, leadership, effective communication, and time management. My goal is to contribute, learn, and grow in dynamic tech environments.</p>
-        <p><strong>Languages:</strong> English (Intermediate), Turkish (Native), German (Basic)</p>
+  <main>
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="section-head reveal">
+        <span class="section-index">01</span>
+        <h2 class="section-title">About me</h2>
       </div>
-      <div class="about-image">
-        <img src="vesikalık.jpeg" alt="Benhur Okur Portrait" />
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm a senior <strong>Computer Engineering</strong> student at
+            <strong>Izmir University of Economics</strong>, graduating June 2026 on a
+            full scholarship. I enjoy turning hard problems into clean, reliable software —
+            from low-level concurrent systems in C to full-stack AI platforms.
+          </p>
+          <p>
+            Most recently I interned at <strong>SOCRadar Cyber Intelligence</strong>, where I
+            built a full-stack LLM Proxy Service unifying multiple AI providers behind a single,
+            secure interface. I care about secure architecture, explainable AI, and shipping
+            things that actually work in production.
+          </p>
+          <ul class="about-facts">
+            <li><span>📍</span> Izmir, Türkiye</li>
+            <li><span>🎓</span> B.Sc. Computer Engineering — Full Scholarship</li>
+            <li><span>🗓️</span> Expected graduation: June 2026</li>
+            <li><span>🗣️</span> Turkish (native), English, German</li>
+          </ul>
+        </div>
+        <div class="about-aside reveal">
+          <div class="about-photo">
+            <img src="vesikalık.jpeg" alt="Benhur Okur" loading="lazy" />
+          </div>
+          <div class="about-card">
+            <p class="about-card-quote">“Builds full-stack and systems-oriented projects with a focus on secure architecture and production-minded design.”</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="skills" class="animate">
-    <h2 class="section-title">My Skills</h2>
-    <div class="skills-grid">
-      <div class="skill">
-        <img src="icons/java.svg" alt="Java" />
-        <p>Java</p>
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section">
+      <div class="section-head reveal">
+        <span class="section-index">02</span>
+        <h2 class="section-title">Experience</h2>
       </div>
-      <div class="skill">
-        <img src="icons/javascript.svg" alt="JavaScript" />
-        <p>JavaScript</p>
-      </div>
-      <div class="skill">
-        <img src="icons/c.svg" alt="C" />
-        <p>C</p>
-      </div>
-      <div class="skill">
-        <img src="icons/kotlin.svg" alt="Kotlin" />
-        <p>Kotlin</p>
-      </div>
-      <div class="skill">
-        <img src="icons/mysql.svg" alt="MySQL" />
-        <p>MySQL</p>
-      </div>
-      <div class="skill">
-        <img src="icons/html.svg" alt="HTML" />
-        <p>HTML</p>
-      </div>
-      <div class="skill">
-        <img src="icons/css.svg" alt="CSS" />
-        <p>CSS</p>
-      </div>
-      <div class="skill">
-        <img src="icons/nodejs.svg" alt="Node.js" />
-        <p>Node.js</p>
-      </div>
-      <div class="skill">
-        <img src="icons/react.svg" alt="React.js" />
-        <p>React.js</p>
-      </div>
-      <div class="skill">
-        <img src="icons/team.svg" alt="Teamwork" />
-        <p>Teamwork</p>
-      </div>
-      <div class="skill">
-        <img src="icons/leadership.svg" alt="Leadership" />
-        <p>Leadership</p>
-      </div>
-      <div class="skill">
-        <img src="icons/communication.svg" alt="Communication" />
-        <p>Communication</p>
-      </div>
-    </div>
-  </section>
+      <div class="timeline">
+        <article class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <div class="tl-top">
+              <h3>Software Engineer Intern</h3>
+              <span class="tl-date">Jul 2025 – Aug 2025</span>
+            </div>
+            <p class="tl-org">SOCRadar Cyber Intelligence · Istanbul, Türkiye</p>
+            <ul class="tl-points">
+              <li>Developed a full-stack <strong>LLM Proxy Service</strong> unifying access to multiple AI providers through a single platform.</li>
+              <li>Implemented <strong>OAuth2</strong> authentication and <strong>JWT</strong>-based session flows to harden account security and access control.</li>
+              <li>Built encrypted API-key handling to protect sensitive credentials used in external model integrations.</li>
+              <li>Designed a modular routing layer that simplified model selection and improved extensibility for future providers.</li>
+              <li>Created a responsive dashboard with <strong>React</strong> and <strong>Tailwind CSS</strong> to streamline API management.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">React</span><span class="tag">Tailwind</span><span class="tag">OAuth2</span><span class="tag">JWT</span><span class="tag">REST APIs</span>
+            </div>
+          </div>
+        </article>
 
-  <section id="projects" class="animate">
-    <h2 class="section-title">Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <img src="images/syllabus-manager.png" alt="Syllabus Manager Screenshot" />
-        <h3>Syllabus Manager</h3>
-        <p>Java, JavaFX, SQLite – A desktop app that lets instructors personalize and manage interactive syllabi. Data is stored locally with SQLite.</p>
+        <article class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <div class="tl-top">
+              <h3>Freelance Systems Developer</h3>
+              <span class="tl-date">Jul 2024 – Aug 2025</span>
+            </div>
+            <p class="tl-org">DaemonSystems · Remote</p>
+            <ul class="tl-points">
+              <li>Designed and implemented a <strong>UNIX-based multithreaded messaging daemon in C</strong> for concurrent message processing.</li>
+              <li>Built a <strong>thread-safe circular buffer</strong> architecture ensuring stable message dispatch under parallel workloads.</li>
+              <li>Implemented filtering, file I/O, and inter-process communication to improve message-handling efficiency.</li>
+              <li>Strengthened system reliability through low-level, concurrency-focused development practices.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">C</span><span class="tag">Concurrency</span><span class="tag">Unix/Linux</span><span class="tag">IPC</span><span class="tag">ThreadPool</span>
+            </div>
+          </div>
+        </article>
       </div>
-      <div class="project">
-        <img src="images/misti-game.png" alt="Misti Game Screenshot" />
-        <h3>Misti Game</h3>
-        <p>Java, OOP, File I/O – A Turkish card game project where you play against bot players. Features novice, regular, and expert bot levels.</p>
-      </div>
-      <div class="project">
-        <img src="images/book-catalog.png" alt="Book Catalog Screenshot" />
-        <h3>Book Catalog</h3>
-        <p>Java, JavaFX, JSON – Book management application with options to import, export, and edit book data. Supports cover images, ISBN, and more.</p>
-      </div>
-      <div class="project">
-        <img src="images/ringbuffer-daemon.png" alt="Daemon System Screenshot" />
-        <h3>Ringbuffer & Daemon System</h3>
-        <p>C, Threads – Developed a multithreaded daemon system using ring buffers for efficient processing. First freelance experience involving thread synchronization and system-level programming.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="animate">
-    <h2 class="section-title">Contact</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <div class="social-links">
-      <a href="https://github.com/benhur-okur" target="_blank"><img src="icons/github.svg" alt="GitHub" /></a>
-      <a href="https://linkedin.com/in/benhurokur35" target="_blank"><img src="icons/linkedin.svg" alt="LinkedIn" /></a>
-    </div>
-    <div style="margin-top: 20px; font-size: 0.9rem;">
-      <p><strong>Phone:</strong> +90 530 682 06 46</p>
-      <p><strong>Email:</strong> benhurokur0@gmail.com</p>
-      <p><strong>Location:</strong> Izmir, Turkey</p>
-    </div>
-  </section>
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section">
+      <div class="section-head reveal">
+        <span class="section-index">03</span>
+        <h2 class="section-title">Selected projects</h2>
+      </div>
+
+      <!-- Featured: AutoEDA -->
+      <article class="project-featured reveal">
+        <div class="pf-left">
+          <div class="pf-badges">
+            <span class="badge badge-live">● In progress</span>
+            <span class="badge">Senior Capstone · FENG 498</span>
+          </div>
+          <h3 class="pf-title">AutoEDA — Intelligent Data Quality Analyzer</h3>
+          <p class="pf-desc">
+            A web platform that automates the early stages of data preparation for tabular
+            datasets. Unlike black-box tools, AutoEDA follows a strict
+            <strong>Human-in-the-Loop</strong> philosophy: every detected issue ships with a
+            clear, rule-based or LLM-supported recommendation, and the system
+            <strong>never modifies your data blindly</strong> — users approve or reject each
+            action, and the original file is always preserved through versioned, non-destructive output.
+          </p>
+          <ul class="pf-highlights">
+            <li><strong>Explainable:</strong> each issue paired with a transparent cleaning suggestion.</li>
+            <li><strong>Safe by default:</strong> explicit approval required before any transformation.</li>
+            <li><strong>Async at scale:</strong> heavy datasets processed off the request path.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">FastAPI</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">scikit-learn</span><span class="tag">Celery + Redis</span><span class="tag">PostgreSQL</span><span class="tag">SQLAlchemy</span><span class="tag">Alembic</span><span class="tag">React</span>
+          </div>
+        </div>
+        <div class="pf-right" aria-hidden="true">
+          <div class="pf-visual">
+            <div class="pf-window">
+              <div class="pf-window-bar"><span></span><span></span><span></span></div>
+              <div class="pf-window-body">
+                <p class="mono"><span class="c-key">POST</span> /datasets/profile</p>
+                <div class="pf-rows">
+                  <div class="pf-row"><span>nulls · age</span><b class="warn">12%</b></div>
+                  <div class="pf-row"><span>outliers · income</span><b class="warn">37</b></div>
+                  <div class="pf-row"><span>dup rows</span><b class="ok">resolved</b></div>
+                </div>
+                <p class="mono dim">→ suggestion: impute(median) · <span class="c-await">awaiting approval</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project grid -->
+      <div class="project-grid">
+
+        <article class="project-card reveal">
+          <div class="pc-top">
+            <span class="pc-icon">🔀</span>
+            <a href="https://github.com/benhur-okur/LLM-Proxy-Service" target="_blank" rel="noopener" class="pc-link" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56v-2.1c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.21 1.84 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.3-5.47-1.3-5.47-5.81 0-1.28.47-2.33 1.23-3.15-.12-.3-.53-1.5.12-3.14 0 0 1-.31 3.3 1.2a11.6 11.6 0 0 1 6 0c2.3-1.51 3.3-1.2 3.3-1.2.65 1.64.24 2.84.12 3.14.77.82 1.23 1.87 1.23 3.15 0 4.52-2.81 5.5-5.49 5.79.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.83.56C20.56 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg>
+            </a>
+          </div>
+          <h3>LLM Proxy Service</h3>
+          <p>A modular proxy platform unifying multiple AI providers behind one interface — centralizing authentication, model routing, and API-key management with extensibility in mind.</p>
+          <div class="tag-row">
+            <span class="tag">Flask</span><span class="tag">React</span><span class="tag">OAuth2</span><span class="tag">JWT</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="pc-top">
+            <span class="pc-icon">🫁</span>
+            <a href="https://github.com/benhur-okur/preScan-breath-assist" target="_blank" rel="noopener" class="pc-link" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56v-2.1c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.21 1.84 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.3-5.47-1.3-5.47-5.81 0-1.28.47-2.33 1.23-3.15-.12-.3-.53-1.5.12-3.14 0 0 1-.31 3.3 1.2a11.6 11.6 0 0 1 6 0c2.3-1.51 3.3-1.2 3.3-1.2.65 1.64.24 2.84.12 3.14.77.82 1.23 1.87 1.23 3.15 0 4.52-2.81 5.5-5.49 5.79.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.83.56C20.56 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg>
+            </a>
+          </div>
+          <h3>Breath Detection System</h3>
+          <p>A real-time respiratory-activity detection system using audio signal processing and machine learning — extracting breathing patterns from ambient audio as a low-cost alternative to specialized hardware.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Librosa</span><span class="tag">Machine Learning</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="pc-top">
+            <span class="pc-icon">📊</span>
+            <a href="https://github.com/benhur-okur/Izmir-Water-Consumption-Analysis" target="_blank" rel="noopener" class="pc-link" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56v-2.1c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.21 1.84 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.3-5.47-1.3-5.47-5.81 0-1.28.47-2.33 1.23-3.15-.12-.3-.53-1.5.12-3.14 0 0 1-.31 3.3 1.2a11.6 11.6 0 0 1 6 0c2.3-1.51 3.3-1.2 3.3-1.2.65 1.64.24 2.84.12 3.14.77.82 1.23 1.87 1.23 3.15 0 4.52-2.81 5.5-5.49 5.79.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.83.56C20.56 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg>
+            </a>
+          </div>
+          <h3>Izmir Water Consumption Analysis</h3>
+          <p>Exploratory data analysis of urban water consumption using İZSU open data (2014–2024) — surfacing seasonal trends and district-level usage patterns in a reproducible notebook.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Jupyter</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="pc-top">
+            <span class="pc-icon">📚</span>
+            <a href="https://github.com/benhur-okur/BookCatalog" target="_blank" rel="noopener" class="pc-link" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56v-2.1c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.21 1.84 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.3-5.47-1.3-5.47-5.81 0-1.28.47-2.33 1.23-3.15-.12-.3-.53-1.5.12-3.14 0 0 1-.31 3.3 1.2a11.6 11.6 0 0 1 6 0c2.3-1.51 3.3-1.2 3.3-1.2.65 1.64.24 2.84.12 3.14.77.82 1.23 1.87 1.23 3.15 0 4.52-2.81 5.5-5.49 5.79.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.83.56C20.56 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg>
+            </a>
+          </div>
+          <h3>BookCatalog</h3>
+          <p>A desktop book-management application with full CRUD functionality and a user-friendly JavaFX interface — designed to keep records organized and accessible for non-technical users.</p>
+          <div class="tag-row">
+            <span class="tag">Java</span><span class="tag">JavaFX</span><span class="tag">JSON</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="pc-top">
+            <span class="pc-icon">🌦️</span>
+            <a href="https://github.com/benhur-okur/Weather-App" target="_blank" rel="noopener" class="pc-link" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56v-2.1c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.21 1.84 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.3-5.47-1.3-5.47-5.81 0-1.28.47-2.33 1.23-3.15-.12-.3-.53-1.5.12-3.14 0 0 1-.31 3.3 1.2a11.6 11.6 0 0 1 6 0c2.3-1.51 3.3-1.2 3.3-1.2.65 1.64.24 2.84.12 3.14.77.82 1.23 1.87 1.23 3.15 0 4.52-2.81 5.5-5.49 5.79.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.83.56C20.56 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg>
+            </a>
+          </div>
+          <h3>Weather App</h3>
+          <p>A weather-monitoring web app delivering location-based forecasts, integrating the OpenWeatherMap API with automated daily email alerts and environment-based configuration for secure deployment.</p>
+          <div class="tag-row">
+            <span class="tag">Flask</span><span class="tag">Tailwind</span><span class="tag">OpenWeatherMap</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="pc-top">
+            <span class="pc-icon">🖼️</span>
+            <a href="https://github.com/benhur-okur/Multi-Stage-Image-Restoration" target="_blank" rel="noopener" class="pc-link" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56v-2.1c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.21 1.84 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.3-5.47-1.3-5.47-5.81 0-1.28.47-2.33 1.23-3.15-.12-.3-.53-1.5.12-3.14 0 0 1-.31 3.3 1.2a11.6 11.6 0 0 1 6 0c2.3-1.51 3.3-1.2 3.3-1.2.65 1.64.24 2.84.12 3.14.77.82 1.23 1.87 1.23 3.15 0 4.52-2.81 5.5-5.49 5.79.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.83.56C20.56 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg>
+            </a>
+          </div>
+          <h3>Multi-Stage Image Restoration</h3>
+          <p>A collaborative digital image-processing project implementing a multi-stage restoration pipeline to recover degraded images through successive denoising and enhancement stages.</p>
+          <div class="tag-row">
+            <span class="tag">MATLAB</span><span class="tag">Image Processing</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section">
+      <div class="section-head reveal">
+        <span class="section-index">04</span>
+        <h2 class="section-title">Skills &amp; tooling</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h4>Languages</h4>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Java</span><span class="tag">C</span><span class="tag">C#</span><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">Kotlin</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4>Frameworks &amp; Libraries</h4>
+          <div class="tag-row">
+            <span class="tag">FastAPI</span><span class="tag">Flask</span><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">SQLAlchemy</span><span class="tag">JavaFX</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4>Tools &amp; Technologies</h4>
+          <div class="tag-row">
+            <span class="tag">Git &amp; GitHub</span><span class="tag">REST APIs</span><span class="tag">JWT</span><span class="tag">OAuth2</span><span class="tag">SSE</span><span class="tag">Celery + Redis</span><span class="tag">Alembic</span><span class="tag">Unix/Linux</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4>Databases</h4>
+          <div class="tag-row">
+            <span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">SQLite</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4>Core Areas</h4>
+          <div class="tag-row">
+            <span class="tag">Backend Development</span><span class="tag">Full-Stack</span><span class="tag">API Design</span><span class="tag">Distributed Systems</span><span class="tag">Machine Learning</span><span class="tag">Data Analysis</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section">
+      <div class="section-head reveal">
+        <span class="section-index">05</span>
+        <h2 class="section-title">Get in touch</h2>
+      </div>
+      <div class="contact-wrap reveal">
+        <div class="contact-intro">
+          <h3>Let's build something.</h3>
+          <p>I'm open to software engineering roles and interesting collaborations. The fastest way to reach me is email — I usually reply within a day.</p>
+          <ul class="contact-list">
+            <li>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+              <a href="mailto:benhurokur0@gmail.com">benhurokur0@gmail.com</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+905306820646">+90 530 682 06 46</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Izmir, Türkiye</span>
+            </li>
+          </ul>
+          <div class="contact-socials">
+            <a href="https://github.com/benhur-okur" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub</a>
+            <a href="https://linkedin.com/in/benhurokur35" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">LinkedIn</a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/benhurokur0@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from your portfolio" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="What would you like to talk about?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <p>© <span id="year"></span> Benhur Okur · Designed &amp; built from scratch.</p>
+    <a href="#hero" class="to-top" aria-label="Back to top">↑ Top</a>
+  </footer>
 
   <script src="script.js"></script>
 </body>

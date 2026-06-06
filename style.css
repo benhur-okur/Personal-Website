@@ -332,6 +332,9 @@ body.light #themeToggle .sun { display: block; }
 .pf-highlights li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
 .pf-highlights strong { color: var(--text); }
 
+.project-featured--alt { direction: rtl; }
+.project-featured--alt > * { direction: ltr; }
+
 /* featured visual mock */
 .pf-visual { perspective: 1000px; }
 .pf-window {

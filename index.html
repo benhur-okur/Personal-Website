@@ -188,29 +188,29 @@
         <h2 class="section-title">Selected projects</h2>
       </div>
 
-      <!-- Featured: AutoEDA -->
+      <!-- Featured: AutoEDA — FIRST -->
       <article class="project-featured reveal">
         <div class="pf-left">
           <div class="pf-badges">
             <span class="badge badge-live">● In progress</span>
-            <span class="badge">Senior Capstone · FENG 498</span>
+            <span class="badge">IUE Graduation Project II · FENG 498</span>
           </div>
           <h3 class="pf-title">AutoEDA — Intelligent Data Quality Analyzer</h3>
           <p class="pf-desc">
-            A web platform that automates the early stages of data preparation for tabular
-            datasets. Unlike black-box tools, AutoEDA follows a strict
-            <strong>Human-in-the-Loop</strong> philosophy: every detected issue ships with a
-            clear, rule-based or LLM-supported recommendation, and the system
-            <strong>never modifies your data blindly</strong> — users approve or reject each
-            action, and the original file is always preserved through versioned, non-destructive output.
+            A web platform for safe, human-approved data cleaning on tabular datasets.
+            The core design principle is <strong>Human-in-the-Loop</strong>: the backend
+            exposes cleaning actions only after the user explicitly approves them —
+            enforced at the API level via a typed <code>approved_actions</code> payload.
+            Original files are <strong>never overwritten</strong>; every operation produces
+            a versioned output alongside an automatic Before/After statistical report.
           </p>
           <ul class="pf-highlights">
-            <li><strong>Explainable:</strong> each issue paired with a transparent cleaning suggestion.</li>
-            <li><strong>Safe by default:</strong> explicit approval required before any transformation.</li>
-            <li><strong>Async at scale:</strong> heavy datasets processed off the request path.</li>
+            <li><strong>Non-destructive by design:</strong> cleaning writes to a separate output path — original data is always preserved.</li>
+            <li><strong>Human-in-the-Loop at the API level:</strong> the <code>/execute</code> endpoint only processes actions the user has explicitly confirmed.</li>
+            <li><strong>Async pipeline:</strong> Celery + Redis offloads heavy Pandas operations so the FastAPI event loop stays unblocked.</li>
           </ul>
           <div class="tag-row">
-            <span class="tag">FastAPI</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">scikit-learn</span><span class="tag">Celery + Redis</span><span class="tag">PostgreSQL</span><span class="tag">SQLAlchemy</span><span class="tag">Alembic</span><span class="tag">React</span>
+            <span class="tag">FastAPI</span><span class="tag">Pandas</span><span class="tag">Celery + Redis</span><span class="tag">PostgreSQL</span><span class="tag">SQLAlchemy</span><span class="tag">asyncpg</span><span class="tag">Docker</span><span class="tag">Pydantic</span>
           </div>
         </div>
         <div class="pf-right" aria-hidden="true">
@@ -218,13 +218,103 @@
             <div class="pf-window">
               <div class="pf-window-bar"><span></span><span></span><span></span></div>
               <div class="pf-window-body">
-                <p class="mono"><span class="c-key">POST</span> /datasets/profile</p>
+                <p class="mono"><span class="c-key">POST</span> /{dataset_id}/execute</p>
                 <div class="pf-rows">
-                  <div class="pf-row"><span>nulls · age</span><b class="warn">12%</b></div>
-                  <div class="pf-row"><span>outliers · income</span><b class="warn">37</b></div>
-                  <div class="pf-row"><span>dup rows</span><b class="ok">resolved</b></div>
+                  <div class="pf-row"><span>fill_median · age</span><b class="ok">approved</b></div>
+                  <div class="pf-row"><span>drop_duplicates</span><b class="ok">approved</b></div>
+                  <div class="pf-row"><span>drop_column · id</span><b class="warn">pending</b></div>
                 </div>
-                <p class="mono dim">→ suggestion: impute(median) · <span class="c-await">awaiting approval</span></p>
+                <p class="mono dim">→ task queued · <span class="c-await">output: dataset_cleaned.csv</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Featured: preScan -->
+      <article class="project-featured project-featured--alt reveal">
+        <div class="pf-left">
+          <div class="pf-badges">
+            <span class="badge">IUE Graduation Project I · FENG 497</span>
+          </div>
+          <h3 class="pf-title">preScan — Breath-Hold Detection from Video</h3>
+          <p class="pf-desc">
+            A deep learning system that detects and classifies breath-hold events from
+            front-facing video recordings. The pipeline runs a <strong>temporal sliding-window
+            CNN</strong> (MobileNetV3-based) over video frames to segment three states —
+            normal breathing, inhale-hold, and exhale-hold — frame by frame,
+            without any dedicated hardware or sensors.
+          </p>
+          <ul class="pf-highlights">
+            <li><strong>No special hardware:</strong> works on a standard webcam recording.</li>
+            <li><strong>Rigorous validation:</strong> Leave-One-Subject-Out (LOSO) cross-validation across 6 subjects.</li>
+            <li><strong>Interactive UI:</strong> Streamlit dashboard for real-time parameter tuning and inference.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">MobileNetV3</span><span class="tag">Streamlit</span><span class="tag">Temporal CNN</span><span class="tag">Deep Learning</span>
+          </div>
+          <div style="margin-top:20px">
+            <a href="https://github.com/benhur-okur/preScan-breath-assist" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View on GitHub</a>
+          </div>
+        </div>
+        <div class="pf-right" aria-hidden="true">
+          <div class="pf-visual">
+            <div class="pf-window">
+              <div class="pf-window-bar"><span></span><span></span><span></span></div>
+              <div class="pf-window-body">
+                <p class="mono dim">sliding window · stride=5 · w=15</p>
+                <div class="pf-rows" style="margin-top:12px">
+                  <div class="pf-row"><span>frames 0–15</span><b class="ok">NORMAL</b></div>
+                  <div class="pf-row"><span>frames 15–30</span><b class="warn">INHALE_HOLD</b></div>
+                  <div class="pf-row"><span>frames 30–45</span><b class="warn">EXHALE_HOLD</b></div>
+                  <div class="pf-row"><span>frames 45–60</span><b class="ok">NORMAL</b></div>
+                </div>
+                <p class="mono dim" style="margin-top:12px">model: <span class="c-key">MobileNetV3Temporal v4</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Featured: LLM Proxy Service -->
+      <article class="project-featured reveal">
+        <div class="pf-left">
+          <div class="pf-badges">
+            <span class="badge">SOCRadar Internship Project</span>
+            <span class="badge">Full-Stack</span>
+          </div>
+          <h3 class="pf-title">LLM Proxy Service</h3>
+          <p class="pf-desc">
+            A production-ready proxy platform that unifies access to multiple AI providers —
+            <strong>Claude (Anthropic), GPT-4 (OpenAI), and Gemini (Google)</strong> — behind
+            a single, consistent interface. Built during my internship at SOCRadar, the system
+            removes per-provider integration overhead by centralizing authentication, routing,
+            and credential management in one service layer.
+          </p>
+          <ul class="pf-highlights">
+            <li><strong>Secure by design:</strong> OAuth2 login flow, JWT sessions, and encrypted API-key storage.</li>
+            <li><strong>Provider-agnostic:</strong> swap or add any model without touching client code.</li>
+            <li><strong>Full-stack:</strong> Flask backend with a React + Tailwind dashboard for API management.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Flask</span><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">OAuth2</span><span class="tag">JWT</span><span class="tag">SQLAlchemy</span><span class="tag">Alembic</span><span class="tag">Anthropic API</span><span class="tag">OpenAI API</span><span class="tag">Google AI</span>
+          </div>
+          <div style="margin-top:20px">
+            <a href="https://github.com/benhur-okur/LLM-Proxy-Service" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View on GitHub</a>
+          </div>
+        </div>
+        <div class="pf-right" aria-hidden="true">
+          <div class="pf-visual">
+            <div class="pf-window">
+              <div class="pf-window-bar"><span></span><span></span><span></span></div>
+              <div class="pf-window-body">
+                <p class="mono"><span class="c-key">POST</span> /v1/chat/completions</p>
+                <div class="pf-rows" style="margin-top:12px">
+                  <div class="pf-row"><span>claude-3-5-sonnet</span><b class="ok">→ Anthropic</b></div>
+                  <div class="pf-row"><span>gpt-4o</span><b class="ok">→ OpenAI</b></div>
+                  <div class="pf-row"><span>gemini-2.0-flash</span><b class="ok">→ Google</b></div>
+                </div>
+                <p class="mono dim" style="margin-top:12px">auth: <span class="c-key">JWT valid</span> · key: <span class="c-await">encrypted</span></p>
               </div>
             </div>
           </div>
@@ -233,34 +323,6 @@
 
       <!-- Project grid -->
       <div class="project-grid">
-
-        <article class="project-card reveal">
-          <div class="pc-top">
-            <span class="pc-icon">🔀</span>
-            <a href="https://github.com/benhur-okur/LLM-Proxy-Service" target="_blank" rel="noopener" class="pc-link" aria-label="View on GitHub">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56v-2.1c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.21 1.84 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.3-5.47-1.3-5.47-5.81 0-1.28.47-2.33 1.23-3.15-.12-.3-.53-1.5.12-3.14 0 0 1-.31 3.3 1.2a11.6 11.6 0 0 1 6 0c2.3-1.51 3.3-1.2 3.3-1.2.65 1.64.24 2.84.12 3.14.77.82 1.23 1.87 1.23 3.15 0 4.52-2.81 5.5-5.49 5.79.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.83.56C20.56 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg>
-            </a>
-          </div>
-          <h3>LLM Proxy Service</h3>
-          <p>A modular proxy platform unifying multiple AI providers behind one interface — centralizing authentication, model routing, and API-key management with extensibility in mind.</p>
-          <div class="tag-row">
-            <span class="tag">Flask</span><span class="tag">React</span><span class="tag">OAuth2</span><span class="tag">JWT</span>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="pc-top">
-            <span class="pc-icon">🫁</span>
-            <a href="https://github.com/benhur-okur/preScan-breath-assist" target="_blank" rel="noopener" class="pc-link" aria-label="View on GitHub">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56v-2.1c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.21 1.84 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.3-5.47-1.3-5.47-5.81 0-1.28.47-2.33 1.23-3.15-.12-.3-.53-1.5.12-3.14 0 0 1-.31 3.3 1.2a11.6 11.6 0 0 1 6 0c2.3-1.51 3.3-1.2 3.3-1.2.65 1.64.24 2.84.12 3.14.77.82 1.23 1.87 1.23 3.15 0 4.52-2.81 5.5-5.49 5.79.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.83.56C20.56 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg>
-            </a>
-          </div>
-          <h3>Breath Detection System</h3>
-          <p>A real-time respiratory-activity detection system using audio signal processing and machine learning — extracting breathing patterns from ambient audio as a low-cost alternative to specialized hardware.</p>
-          <div class="tag-row">
-            <span class="tag">Python</span><span class="tag">Librosa</span><span class="tag">Machine Learning</span>
-          </div>
-        </article>
 
         <article class="project-card reveal">
           <div class="pc-top">
@@ -278,13 +340,41 @@
 
         <article class="project-card reveal">
           <div class="pc-top">
+            <span class="pc-icon">⚙️</span>
+            <a href="https://github.com/benhur-okur/The-Integrated-Assignment-Environment" target="_blank" rel="noopener" class="pc-link" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56v-2.1c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.21 1.84 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.3-5.47-1.3-5.47-5.81 0-1.28.47-2.33 1.23-3.15-.12-.3-.53-1.5.12-3.14 0 0 1-.31 3.3 1.2a11.6 11.6 0 0 1 6 0c2.3-1.51 3.3-1.2 3.3-1.2.65 1.64.24 2.84.12 3.14.77.82 1.23 1.87 1.23 3.15 0 4.52-2.81 5.5-5.49 5.79.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.83.56C20.56 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg>
+            </a>
+          </div>
+          <h3>Integrated Assignment Environment</h3>
+          <p>A desktop IDE-like tool for managing and submitting programming assignments, with two published releases and 4 forks from classmates. Built for the CE 316 course at IUE.</p>
+          <div class="tag-row">
+            <span class="tag">C#</span><span class="tag">Desktop App</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="pc-top">
+            <span class="pc-icon">🌐</span>
+            <a href="https://github.com/benhur-okur/Dictionary_TR_ENG_GER" target="_blank" rel="noopener" class="pc-link" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56v-2.1c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.21 1.84 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.3-5.47-1.3-5.47-5.81 0-1.28.47-2.33 1.23-3.15-.12-.3-.53-1.5.12-3.14 0 0 1-.31 3.3 1.2a11.6 11.6 0 0 1 6 0c2.3-1.51 3.3-1.2 3.3-1.2.65 1.64.24 2.84.12 3.14.77.82 1.23 1.87 1.23 3.15 0 4.52-2.81 5.5-5.49 5.79.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.83.56C20.56 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg>
+            </a>
+          </div>
+          <h3>TR / EN / DE Dictionary</h3>
+          <p>A trilingual vocabulary learning app supporting Turkish, English, and German — with example sentences, German article (Artikel) lookup, and progress tracking to reinforce previously learned words.</p>
+          <div class="tag-row">
+            <span class="tag">Java</span><span class="tag">Desktop App</span>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="pc-top">
             <span class="pc-icon">📚</span>
             <a href="https://github.com/benhur-okur/BookCatalog" target="_blank" rel="noopener" class="pc-link" aria-label="View on GitHub">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56v-2.1c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.73-1.34-1.73-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.21 1.84 1.21 1.07 1.79 2.81 1.27 3.5.97.11-.76.42-1.27.76-1.56-2.67-.3-5.47-1.3-5.47-5.81 0-1.28.47-2.33 1.23-3.15-.12-.3-.53-1.5.12-3.14 0 0 1-.31 3.3 1.2a11.6 11.6 0 0 1 6 0c2.3-1.51 3.3-1.2 3.3-1.2.65 1.64.24 2.84.12 3.14.77.82 1.23 1.87 1.23 3.15 0 4.52-2.81 5.5-5.49 5.79.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.83.56C20.56 21.91 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/></svg>
             </a>
           </div>
           <h3>BookCatalog</h3>
-          <p>A desktop book-management application with full CRUD functionality and a user-friendly JavaFX interface — designed to keep records organized and accessible for non-technical users.</p>
+          <p>A desktop book-management application with full CRUD functionality and a user-friendly JavaFX interface — import/export support, cover images, and ISBN tracking.</p>
           <div class="tag-row">
             <span class="tag">Java</span><span class="tag">JavaFX</span><span class="tag">JSON</span>
           </div>
@@ -298,7 +388,7 @@
             </a>
           </div>
           <h3>Weather App</h3>
-          <p>A weather-monitoring web app delivering location-based forecasts, integrating the OpenWeatherMap API with automated daily email alerts and environment-based configuration for secure deployment.</p>
+          <p>A weather-monitoring web app delivering location-based forecasts via the OpenWeatherMap API, with automated daily email alerts and environment-based config for secure deployment.</p>
           <div class="tag-row">
             <span class="tag">Flask</span><span class="tag">Tailwind</span><span class="tag">OpenWeatherMap</span>
           </div>
@@ -312,7 +402,7 @@
             </a>
           </div>
           <h3>Multi-Stage Image Restoration</h3>
-          <p>A collaborative digital image-processing project implementing a multi-stage restoration pipeline to recover degraded images through successive denoising and enhancement stages.</p>
+          <p>A collaborative CE 490 project implementing a multi-stage image restoration pipeline — successive denoising and enhancement stages to recover degraded images from noise and blur.</p>
           <div class="tag-row">
             <span class="tag">MATLAB</span><span class="tag">Image Processing</span>
           </div>
@@ -337,13 +427,13 @@
         <div class="skill-group reveal">
           <h4>Frameworks &amp; Libraries</h4>
           <div class="tag-row">
-            <span class="tag">FastAPI</span><span class="tag">Flask</span><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">SQLAlchemy</span><span class="tag">JavaFX</span>
+            <span class="tag">FastAPI</span><span class="tag">Flask</span><span class="tag">React</span><span class="tag">Tailwind CSS</span><span class="tag">PyTorch</span><span class="tag">Streamlit</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">scikit-learn</span><span class="tag">SQLAlchemy</span><span class="tag">JavaFX</span>
           </div>
         </div>
         <div class="skill-group reveal">
           <h4>Tools &amp; Technologies</h4>
           <div class="tag-row">
-            <span class="tag">Git &amp; GitHub</span><span class="tag">REST APIs</span><span class="tag">JWT</span><span class="tag">OAuth2</span><span class="tag">SSE</span><span class="tag">Celery + Redis</span><span class="tag">Alembic</span><span class="tag">Unix/Linux</span>
+            <span class="tag">Git &amp; GitHub</span><span class="tag">REST APIs</span><span class="tag">JWT</span><span class="tag">OAuth2</span><span class="tag">SSE</span><span class="tag">Celery + Redis</span><span class="tag">Alembic</span><span class="tag">Flask-Migrate</span><span class="tag">Unix/Linux</span><span class="tag">Anthropic SDK</span><span class="tag">OpenAI SDK</span><span class="tag">Google AI SDK</span>
           </div>
         </div>
         <div class="skill-group reveal">
@@ -355,7 +445,7 @@
         <div class="skill-group reveal">
           <h4>Core Areas</h4>
           <div class="tag-row">
-            <span class="tag">Backend Development</span><span class="tag">Full-Stack</span><span class="tag">API Design</span><span class="tag">Distributed Systems</span><span class="tag">Machine Learning</span><span class="tag">Data Analysis</span>
+            <span class="tag">Backend Development</span><span class="tag">Full-Stack</span><span class="tag">API Design</span><span class="tag">Distributed Systems</span><span class="tag">Machine Learning</span><span class="tag">Deep Learning</span><span class="tag">Data Analysis</span>
           </div>
         </div>
       </div>

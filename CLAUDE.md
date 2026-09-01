@@ -67,8 +67,10 @@ Yazma:
 - **"AI-powered" deme** — çalışma zamanında LLM yok, AI sadece içerik hazırlığında.
 - **"SM-2 / SuperMemo" deme** — sabit aralıklı kendi şeması (7 / 3 / 1 gün).
 - **Streak, genel sıralama tablosu, puanla içerik açma yok** — bilinçli olarak reddedildi.
-- **Dizi/film adı verme, replik uydurma** — içerik telifli, kaynağı ve nasıl
-  toplandığı sitede geçmemeli. Mockup'taki metinler bilerek "redacted" bırakıldı.
+- **Replik uydurma.** İçerik telifli; kaynağı ve nasıl toplandığı (indirme aracı,
+  YouTube vb.) sitede geçmemeli. Mockup'taki ifade/anlam/nüans metinleri
+  uygulamanın gerçek verisinden alındı; değiştirmen gerekirse yenisini de
+  kullanıcıdan doğrulat, altyazı satırı bilerek soyut çubuk olarak duruyor.
 - **Çıkış tarihi, indirme/kullanıcı sayısı yok.** iOS önce, Android sonra.
 
 ## Değişiklikten sonra

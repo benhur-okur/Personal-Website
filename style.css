@@ -439,6 +439,7 @@ body.light #themeToggle .sun { display: block; }
   text-transform: uppercase; color: #8b8bff; margin-top: 2px;
 }
 .vf-reveal p:first-child { margin-top: 0; }
+.vf-reveal em { font-style: normal; font-size: 0.72rem; line-height: 1.5; color: #f5f5f7; }
 
 
 /* ---------- Project grid ---------- */

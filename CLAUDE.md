@@ -50,6 +50,27 @@ film/dizi sahnelerinden İngilizce kelime öğreten mobil uygulama. Hero'daki
 "Currently building Vocabify" şeridi de buraya bağlanır. Yeni proje eklerken
 Vocabify'ı ilk sıradan indirme.
 
+## Vocabify hakkında yazarken
+
+Uygulama bu repoda değil, o yüzden buradaki bilgiler dışında bir şey yazma —
+gerekiyorsa kullanıcıdan Vocabify oturumundan doğrulatmasını iste.
+
+Doğru olanlar: bir kart = bir ifade + o ifadenin geçtiği kısa klip; ekrandaki
+satır her zaman klipte duyulan satırdır; kullanıcı üç şıkla kendini
+değerlendirir (I knew it / Not sure / New to me); ifadenin **o sahnedeki**
+anlamı ve nüansı cevaptan sonra açılır; vadesi gelen ifadeler ayrı bir ekranda
+değil, feed'in içinde tekrar gelir; puanı yalnızca sunucu yazar (RLS).
+27 sahne, 303 ifade, 73 test.
+
+Yazma:
+- **Türkçe karşılık yok** — uygulama tamamen İngilizce, anlam İngilizce açıklanıyor.
+- **"AI-powered" deme** — çalışma zamanında LLM yok, AI sadece içerik hazırlığında.
+- **"SM-2 / SuperMemo" deme** — sabit aralıklı kendi şeması (7 / 3 / 1 gün).
+- **Streak, genel sıralama tablosu, puanla içerik açma yok** — bilinçli olarak reddedildi.
+- **Dizi/film adı verme, replik uydurma** — içerik telifli, kaynağı ve nasıl
+  toplandığı sitede geçmemeli. Mockup'taki metinler bilerek "redacted" bırakıldı.
+- **Çıkış tarihi, indirme/kullanıcı sayısı yok.** iOS önce, Android sonra.
+
 ## Değişiklikten sonra
 
 - Görsel doğrulama için headless Chrome ile ekran görüntüsü al:

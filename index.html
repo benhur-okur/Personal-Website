@@ -57,7 +57,7 @@
   <section class="hero" id="hero">
     <div class="hero-inner reveal">
       <p class="hero-eyebrow"><span class="status-dot"></span> Available now · Open to Software Engineering roles</p>
-      <p class="hero-nowbuilding">🚀 Currently building <a href="#vocabify"><strong>Vocabify</strong></a> — learn English from the scenes you love. <span>Coming soon to the App Store &amp; Google Play.</span></p>
+      <p class="hero-nowbuilding">🚀 Currently building <a href="#vocabify"><strong>Vocabify</strong></a> — learn English from the scenes you love. <span>Coming soon to the App Store.</span></p>
       <h1 class="hero-title">
         Hi, I'm Benhur Okur.<br />
         I build <span class="gradient-text">backend systems</span> &amp;
@@ -113,7 +113,7 @@
             I interned at <strong>SOCRadar Cyber Intelligence</strong>, where I built a
             full-stack LLM Proxy Service unifying multiple AI providers behind a single,
             secure interface. Right now most of my energy goes into <strong>Vocabify</strong>,
-            a mobile app that teaches English through real movie and series scenes. I care about
+            a mobile app that teaches English from short scene clips — one expression, one clip, one decision at a time. I care about
             secure architecture, explainable AI, and shipping things that actually work in
             production.
           </p>
@@ -198,41 +198,49 @@
         <div class="pf-left">
           <div class="pf-badges">
             <span class="badge badge-flagship">★ Flagship product</span>
-            <span class="badge badge-live">● In development</span>
-            <span class="badge badge-soon">Coming soon · App Store &amp; Google Play</span>
+            <span class="badge badge-live">● In active development</span>
+            <span class="badge badge-soon">Coming soon · App Store</span>
           </div>
           <h3 class="pf-title">Vocabify — Learn English from the scenes you love</h3>
-          <p class="pf-tagline">Stop memorizing word lists. Start remembering moments.</p>
+          <p class="pf-tagline">The dictionary tells you what a word means. A scene tells you what it means <em>here</em>.</p>
           <p class="pf-desc">
-            Vocabify turns real <strong>movie and series scenes</strong> into your English
-            vocabulary lessons. You watch a short clip, tap any word you don't know, and it's
-            saved with the line, the voice, and the moment it came from — so the word sticks to
-            a memory instead of a flashcard. Smart repetition brings it back exactly when you're
-            about to forget it.
+            Vocabify is a mobile app that teaches English through short scene clips. Every card is
+            <strong>one expression and the one clip where it's spoken</strong> — you hear it, decide
+            whether you knew it, and only then does the app reveal what it actually meant in that
+            moment. No word lists, no dictionary definitions stripped of context, no guessing which
+            of six senses was the right one.
           </p>
           <ul class="pf-highlights">
-            <li><strong>Words in context, not in lists:</strong> every word is learned inside the scene where it was actually said.</li>
-            <li><strong>Built to be remembered:</strong> spaced repetition schedules each word right before you'd forget it.</li>
-            <li><strong>Learn in the time you already waste:</strong> one scene, one minute — real progress between two stops.</li>
+            <li><strong>The line on screen is the line you hear:</strong> each card's clip is cut to the expression's own subtitle segment plus the one before it — a guarantee locked down by tests, not by hand.</li>
+            <li><strong>Meaning first, definition never:</strong> the app explains what the expression means <em>in that scene</em>, including the nuance a dictionary entry would flatten.</li>
+            <li><strong>Review built into the feed:</strong> one honest self-assessment — <em>I knew it · Not sure · New to me</em> — schedules the expression, and due ones resurface inside the normal feed instead of a separate chore screen.</li>
+            <li><strong>Scoring the client can't touch:</strong> points are written only by the server, with row-level security and a two-encounter rule that closed a real farming exploit found in production data.</li>
           </ul>
           <div class="tag-row">
-            <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">iOS</span><span class="tag">Android</span><span class="tag">Spaced Repetition</span>
+            <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Riverpod</span><span class="tag">Supabase</span><span class="tag">PostgreSQL</span><span class="tag">Row Level Security</span><span class="tag">Sentry</span>
           </div>
-          <p class="pf-note">Launching on the App Store and Google Play — follow along on <a href="https://github.com/benhur-okur" target="_blank" rel="noopener">GitHub</a> or <a href="mailto:benhurokur0@gmail.com?subject=Vocabify">drop me a line</a>.</p>
+          <p class="pf-note">27 curated scenes · 303 human-reviewed expressions · 73 automated tests passing. Shipping to the App Store first, Android to follow — <a href="mailto:benhurokur0@gmail.com?subject=Vocabify">get in touch</a> if you'd like an early look.</p>
         </div>
         <div class="pf-right" aria-hidden="true">
           <div class="pf-visual">
-            <div class="pf-window">
-              <div class="pf-window-bar"><span></span><span></span><span></span></div>
-              <div class="pf-window-body">
-                <p class="mono dim">scene 04:12 · <span class="c-key">The Pursuit of Happyness</span></p>
-                <p class="pf-quote">"Don't ever let somebody tell you<br />you can't <mark>accomplish</mark> something."</p>
-                <div class="pf-rows">
-                  <div class="pf-row"><span>accomplish · <i>başarmak</i></span><b class="ok">saved</b></div>
-                  <div class="pf-row"><span>pursuit · <i>arayış</i></span><b class="ok">learned</b></div>
-                  <div class="pf-row"><span>reckon · <i>saymak</i></span><b class="warn">review in 2d</b></div>
+            <div class="vf-phone">
+              <div class="vf-screen">
+                <div class="vf-meta"><span>scene</span><span>00:14</span></div>
+                <div class="vf-stage">
+                  <span class="vf-play"></span>
+                  <div class="vf-sub">
+                    <i style="width:82%"></i><i style="width:44%"></i><b>expression</b><i style="width:22%"></i>
+                  </div>
                 </div>
-                <p class="mono dim">streak: <span class="c-await">14 days</span> · 312 words</p>
+                <div class="vf-choices">
+                  <span>I knew it</span><span>Not sure</span><span class="on">New to me</span>
+                </div>
+                <div class="vf-reveal">
+                  <p>in this scene</p>
+                  <i style="width:92%"></i><i style="width:70%"></i>
+                  <p>nuance</p>
+                  <i style="width:80%"></i>
+                </div>
               </div>
             </div>
           </div>

@@ -389,13 +389,56 @@ body.light #themeToggle .sun { display: block; }
 .pf-note a { color: var(--text-soft); text-decoration: none; border-bottom: 1px solid var(--border-strong); }
 .pf-note a:hover { color: var(--accent); border-color: var(--accent); }
 
-.pf-quote {
-  margin: 14px 0 4px; font-size: 0.95rem; line-height: 1.65; color: #e6e7f2; font-style: italic;
+/* Vocabify phone mock — schematic on purpose: real UI labels, redacted copy */
+.vf-phone {
+  width: 268px; margin: 0 auto; padding: 10px;
+  background: #16161f; border: 1px solid var(--border-strong); border-radius: 34px;
+  box-shadow: var(--shadow); transform: rotateY(-6deg) rotateX(3deg);
+  transition: transform 0.4s ease;
 }
-.pf-quote mark {
-  background: rgba(139, 92, 246, 0.28); color: #ddd6fe;
-  padding: 1px 5px; border-radius: 5px; font-style: normal; font-weight: 600;
+.project-featured:hover .vf-phone { transform: rotateY(0deg) rotateX(0deg); }
+.vf-screen {
+  background: #000; border-radius: 26px; padding: 18px 14px 14px;
+  display: flex; flex-direction: column; gap: 12px;
 }
+.vf-meta {
+  display: flex; justify-content: space-between;
+  font-family: var(--font-mono); font-size: 0.68rem; color: #9a9aa2;
+}
+.vf-stage {
+  position: relative; border-radius: 14px; min-height: 128px;
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 12px;
+  background: linear-gradient(165deg, rgba(139,139,255,0.20), rgba(0,0,0,0.85) 70%);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.vf-play {
+  position: absolute; top: 40px; left: 50%; transform: translateX(-50%);
+  width: 0; height: 0; border-style: solid; border-width: 9px 0 9px 15px;
+  border-color: transparent transparent transparent rgba(245,245,247,0.5);
+}
+.vf-sub { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
+.vf-sub i, .vf-reveal i {
+  display: block; height: 7px; border-radius: 4px; background: rgba(245,245,247,0.22);
+}
+.vf-sub b {
+  font-size: 0.66rem; font-weight: 600; letter-spacing: 0.02em;
+  color: #0b0b12; background: #8b8bff; padding: 2px 8px; border-radius: 6px;
+}
+.vf-choices { display: flex; gap: 6px; }
+.vf-choices span {
+  flex: 1; text-align: center; font-size: 0.6rem; font-weight: 600; color: #9a9aa2;
+  padding: 7px 4px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12);
+}
+.vf-choices span.on { color: #0b0b12; background: #8b8bff; border-color: #8b8bff; }
+.vf-reveal {
+  display: grid; gap: 6px; padding: 12px; border-radius: 14px;
+  background: rgba(139,139,255,0.08); border: 1px solid rgba(139,139,255,0.22);
+}
+.vf-reveal p {
+  font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.06em;
+  text-transform: uppercase; color: #8b8bff; margin-top: 2px;
+}
+.vf-reveal p:first-child { margin-top: 0; }
 
 
 /* ---------- Project grid ---------- */

@@ -3,23 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Benhur Okur — Software Engineer focused on backend systems, AI-powered products, and full-stack development. B.Sc. Computer Engineering, Izmir University of Economics." />
+  <meta name="description" content="Benhur Okur — Full-stack software engineer building AI-powered systems and user-facing products across web, browser, and mobile." />
   <meta name="author" content="Benhur Okur" />
+  <meta name="theme-color" content="#0a0a12" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://benhur-okur.github.io/Personal-Website/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Benhur Okur — Software Engineer" />
-  <meta property="og:description" content="Backend systems, AI-powered products, and full-stack development. Currently building Vocabify — learn English from real movie scenes." />
+  <meta property="og:title" content="Benhur Okur — Full-Stack Software Engineer" />
+  <meta property="og:description" content="Building ReelVocab for the Chrome Web Store and testing Vocabify privately on Android." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://benhur-okur.github.io/Personal-Website/" />
 
-  <title>Benhur Okur — Software Engineer</title>
+  <title>Benhur Okur — Full-Stack Software Engineer</title>
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "dateModified": "2026-09-21",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Benhur Okur",
+      "url": "https://benhur-okur.github.io/Personal-Website/",
+      "image": "https://benhur-okur.github.io/Personal-Website/vesikal%C4%B1k.jpeg",
+      "jobTitle": "Full-Stack Software Engineer",
+      "email": "mailto:benhurokur0@gmail.com",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Izmir University of Economics"
+      },
+      "sameAs": [
+        "https://github.com/benhur-okur",
+        "https://linkedin.com/in/benhurokur35"
+      ]
+    }
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <!-- Animated background -->
   <div class="bg-grid" aria-hidden="true"></div>
   <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
@@ -47,7 +77,7 @@
         <svg class="moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
-      <button class="menu-toggle icon-btn" id="menuToggle" aria-label="Open menu">
+      <button class="menu-toggle icon-btn" id="menuToggle" aria-label="Open menu" aria-controls="menuLinks" aria-expanded="false">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </nav>
@@ -56,18 +86,16 @@
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
     <div class="hero-inner reveal">
-      <p class="hero-eyebrow"><span class="status-dot"></span> Available now · Open to Software Engineering roles</p>
-      <p class="hero-nowbuilding">🚀 Currently building <a href="#vocabify"><strong>Vocabify</strong></a> — learn English from the scenes you love. <span>Coming soon to the App Store.</span></p>
+      <p class="hero-eyebrow"><span class="status-dot"></span> Open to Full-Stack and AI-focused Software Engineering roles</p>
+      <p class="hero-nowbuilding">Currently shipping two language-learning products: <a href="#reelvocab"><strong>ReelVocab</strong></a>, a Chrome Web Store release candidate, and <a href="#vocabify"><strong>Vocabify</strong></a>, now in private Android alpha.</p>
       <h1 class="hero-title">
         Hi, I'm Benhur Okur.<br />
-        I build <span class="gradient-text">backend systems</span> &amp;
-        <span class="gradient-text">AI-powered products</span>.
+        I build <span class="gradient-text">full-stack products</span> &amp;
+        <span class="gradient-text">AI-powered systems</span>.
       </h1>
       <p class="hero-sub">
-        Computer Engineering graduate with hands-on experience in software development,
-        artificial intelligence, and data science. I design full-stack and systems-oriented
-        projects with a focus on secure architecture, practical problem solving, and
-        production-minded design.
+        Computer Engineering graduate focused on full-stack engineering and AI-enabled
+        products, with hands-on work across backend, web, browser extensions, and mobile.
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">View my work</a>
@@ -93,7 +121,7 @@
     </a>
   </section>
 
-  <main>
+  <main id="main-content">
     <!-- ============ ABOUT ============ -->
     <section id="about" class="section">
       <div class="section-head reveal">
@@ -104,32 +132,25 @@
         <div class="about-text reveal">
           <p>
             I'm a <strong>Computer Engineering</strong> graduate of
-            <strong>Izmir University of Economics</strong>, where I studied on a
-            full scholarship and graduated in June 2026. I enjoy turning hard problems into
-            clean, reliable software — from low-level concurrent systems in C to full-stack
-            AI platforms.
+            <strong>Izmir University of Economics</strong>, where I studied on a full
+            scholarship. My main focus is full-stack software and AI-powered systems. I also
+            build mobile products when the problem calls for it, including Vocabify.
           </p>
           <p>
-            I interned at <strong>SOCRadar Cyber Intelligence</strong>, where I built a
-            full-stack LLM Proxy Service unifying multiple AI providers behind a single,
-            secure interface. Right now most of my energy goes into <strong>Vocabify</strong>,
-            a mobile app that teaches English from short scene clips — one expression, one clip, one decision at a time. I care about
-            secure architecture, explainable AI, and shipping things that actually work in
-            production.
+            I previously worked as a Software Engineer Intern at
+            <strong>SOCRadar Cyber Intelligence</strong> and as a freelance systems developer.
+            I'm currently building <strong>ReelVocab</strong> and <strong>Vocabify</strong>, two
+            context-based language-learning products for Chrome and mobile.
           </p>
           <ul class="about-facts">
             <li><span>📍</span> Izmir, Türkiye</li>
             <li><span>🎓</span> B.Sc. Computer Engineering — Full Scholarship</li>
-            <li><span>🗓️</span> Graduated: June 2026</li>
-            <li><span>🗣️</span> Turkish (native), English, German</li>
+            <li><span>🗣️</span> Turkish (native) · English (B2) · German (basic)</li>
           </ul>
         </div>
         <div class="about-aside reveal">
           <div class="about-photo">
             <img src="vesikalık.jpeg" alt="Benhur Okur" loading="lazy" />
-          </div>
-          <div class="about-card">
-            <p class="about-card-quote">“Builds full-stack and systems-oriented projects with a focus on secure architecture and production-minded design.”</p>
           </div>
         </div>
       </div>
@@ -151,11 +172,9 @@
             </div>
             <p class="tl-org">SOCRadar Cyber Intelligence · Istanbul, Türkiye</p>
             <ul class="tl-points">
-              <li>Developed a full-stack <strong>LLM Proxy Service</strong> unifying access to multiple AI providers through a single platform.</li>
-              <li>Implemented <strong>OAuth2</strong> authentication and <strong>JWT</strong>-based session flows to harden account security and access control.</li>
-              <li>Built encrypted API-key handling to protect sensitive credentials used in external model integrations.</li>
-              <li>Designed a modular routing layer that simplified model selection and improved extensibility for future providers.</li>
-              <li>Created a responsive dashboard with <strong>React</strong> and <strong>Tailwind CSS</strong> to streamline API management.</li>
+              <li>Developed a full-stack <strong>LLM Proxy Service</strong> that unified access to multiple AI providers.</li>
+              <li>Implemented <strong>OAuth2</strong>, <strong>JWT</strong>-based sessions, and encrypted API-key handling.</li>
+              <li>Built a modular routing backend and a responsive <strong>React</strong> and <strong>Tailwind CSS</strong> dashboard.</li>
             </ul>
             <div class="tag-row">
               <span class="tag">React</span><span class="tag">Tailwind</span><span class="tag">OAuth2</span><span class="tag">JWT</span><span class="tag">REST APIs</span>
@@ -172,11 +191,9 @@
             </div>
             <p class="tl-org">Self-Employed · Remote</p>
             <ul class="tl-points">
-              <li>Worked as an independent freelance developer delivering low-level <strong>daemon systems</strong> software for clients.</li>
-              <li>Designed and implemented a <strong>UNIX-based multithreaded messaging daemon in C</strong> for concurrent message processing.</li>
-              <li>Built a <strong>thread-safe circular buffer</strong> architecture ensuring stable message dispatch under parallel workloads.</li>
-              <li>Implemented filtering, file I/O, and inter-process communication to improve message-handling efficiency.</li>
-              <li>Strengthened system reliability through low-level, concurrency-focused development practices.</li>
+              <li>Delivered low-level systems software for clients, including a <strong>UNIX-based multithreaded messaging daemon in C</strong>.</li>
+              <li>Designed a <strong>thread-safe circular buffer</strong> and concurrent message-dispatch architecture.</li>
+              <li>Implemented filtering, file I/O, inter-process communication, and concurrency safeguards.</li>
             </ul>
             <div class="tag-row">
               <span class="tag">C</span><span class="tag">Concurrency</span><span class="tag">Unix/Linux</span><span class="tag">IPC</span><span class="tag">ThreadPool</span>
@@ -193,33 +210,86 @@
         <h2 class="section-title">Selected projects</h2>
       </div>
 
-      <!-- Featured: Vocabify — FLAGSHIP -->
-      <article class="project-featured project-featured--hero reveal" id="vocabify">
+      <!-- Featured: ReelVocab — FLAGSHIP -->
+      <article class="project-featured project-featured--hero reveal" id="reelvocab">
         <div class="pf-left">
           <div class="pf-badges">
             <span class="badge badge-flagship">★ Flagship product</span>
-            <span class="badge badge-live">● In active development</span>
-            <span class="badge badge-soon">Coming soon · App Store</span>
+            <span class="badge badge-alpha">● Release candidate</span>
+            <span class="badge">Chrome · Manifest V3</span>
+          </div>
+          <h3 class="pf-title">ReelVocab — Understand the English that dictionaries miss</h3>
+          <p class="pf-tagline">A YouTube vocabulary layer for expressions whose meaning cannot be guessed word by word.</p>
+          <p class="pf-desc">
+            A Chrome extension that analyzes English YouTube captions and explains idioms,
+            phrasal verbs, slang, and shifted meanings <strong>in their exact context</strong>.
+            It is being prepared for its first Chrome Web Store submission.
+          </p>
+          <ul class="pf-highlights">
+            <li><strong>Context-aware selection:</strong> prioritizes expressions whose meaning cannot be inferred word by word.</li>
+            <li><strong>Secure BYOK architecture:</strong> model calls run in the service worker and the API key never enters YouTube's page context.</li>
+            <li><strong>Guarded output pipeline:</strong> handles varied caption formats and rejects unsupported suggestions through schema validation and six deterministic gates.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">TypeScript</span><span class="tag">Chrome MV3</span><span class="tag">esbuild</span><span class="tag">Mistral API</span><span class="tag">BYOK</span><span class="tag">YouTube Captions</span><span class="tag">Local Cache</span>
+          </div>
+          <div class="pf-actions">
+            <a href="mailto:benhurokur0@gmail.com?subject=ReelVocab%20early%20access" class="btn btn-ghost btn-sm">Ask for early access</a>
+          </div>
+          <p class="pf-note">Type-safe build · Narrow host permissions · Reviewed showcase mode for trying selected videos without an API key. Chrome Web Store link will replace this note after submission and approval.</p>
+        </div>
+        <div class="pf-right" aria-hidden="true">
+          <div class="pf-visual">
+            <div class="rv-browser">
+              <div class="rv-browser-bar">
+                <span></span><span></span><span></span>
+                <div class="rv-address">youtube.com/watch</div>
+              </div>
+              <div class="rv-stage">
+                <div class="rv-video-lines"><i></i><i></i><b>contextual expression</b></div>
+                <div class="rv-panel">
+                  <div class="rv-panel-head"><strong>ReelVocab</strong><span>reviewed</span></div>
+                  <p>Likely meaning in this scene</p>
+                  <div class="rv-copy"><i></i><i></i><i></i></div>
+                  <div class="rv-items">
+                    <span><b>0:42</b><i></i></span>
+                    <span><b>1:18</b><i></i></span>
+                    <span><b>2:07</b><i></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Featured: Vocabify -->
+      <article class="project-featured project-featured--alt reveal" id="vocabify">
+        <div class="pf-left">
+          <div class="pf-badges">
+            <span class="badge">Mobile product</span>
+            <span class="badge badge-alpha">● Private Android alpha</span>
+            <span class="badge badge-soon">iOS beta in preparation</span>
           </div>
           <h3 class="pf-title">Vocabify — Learn English from the scenes you love</h3>
           <p class="pf-tagline">The dictionary tells you what a word means. A scene tells you what it means <em>here</em>.</p>
           <p class="pf-desc">
-            Vocabify is a mobile app that teaches English through short scene clips. Every card is
-            <strong>one expression and the one clip where it's spoken</strong> — you hear it, decide
-            whether you knew it, and only then does the app reveal what it actually meant in that
-            moment. No word lists, no dictionary definitions stripped of context, no guessing which
-            of six senses was the right one.
+            A mobile app for learning English through short scene clips. Each card pairs one
+            expression with the moment it is spoken, then reveals its meaning and nuance in
+            that specific context.
           </p>
           <ul class="pf-highlights">
-            <li><strong>The line on screen is the line you hear:</strong> each card's clip is cut to the expression's own subtitle segment plus the one before it — a guarantee locked down by tests, not by hand.</li>
-            <li><strong>Meaning first, definition never:</strong> the app explains what the expression means <em>in that scene</em>, including the nuance a dictionary entry would flatten.</li>
-            <li><strong>Review built into the feed:</strong> one honest self-assessment — <em>I knew it · Not sure · New to me</em> — schedules the expression, and due ones resurface inside the normal feed instead of a separate chore screen.</li>
-            <li><strong>Scoring the client can't touch:</strong> points are written only by the server, with row-level security and a two-encounter rule that closed a real farming exploit found in production data.</li>
+            <li><strong>Scene-level meaning:</strong> every clip and explanation is tied to the expression's actual subtitle segment.</li>
+            <li><strong>Review inside the feed:</strong> self-assessment schedules expressions to resurface naturally instead of creating a separate study queue.</li>
+            <li><strong>Server-controlled scoring:</strong> row-level security and a two-encounter rule protect points from client-side manipulation.</li>
           </ul>
           <div class="tag-row">
             <span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Riverpod</span><span class="tag">Supabase</span><span class="tag">PostgreSQL</span><span class="tag">Row Level Security</span><span class="tag">Sentry</span>
           </div>
-          <p class="pf-note">27 curated scenes · 303 human-reviewed expressions · 73 automated tests passing. Shipping to the App Store first, Android to follow — <a href="mailto:benhurokur0@gmail.com?subject=Vocabify">get in touch</a> if you'd like an early look.</p>
+          <div class="pf-actions">
+            <a href="mailto:benhurokur0@gmail.com?subject=Vocabify%20Android%20alpha" class="btn btn-ghost btn-sm">Request an early build</a>
+          </div>
+          <p class="pf-note">27 curated scenes · 303 human-reviewed expressions · 246 automated test cases across 35 test files. The current APK is shared privately with a small Android test group for hands-on feedback.</p>
         </div>
         <div class="pf-right" aria-hidden="true">
           <div class="pf-visual">
@@ -248,10 +318,10 @@
       </article>
 
       <!-- Featured: AutoEDA -->
-      <article class="project-featured project-featured--alt reveal">
+      <article class="project-featured reveal">
         <div class="pf-left">
           <div class="pf-badges">
-            <span class="badge badge-live">● Working build</span>
+            <span class="badge badge-live">✓ Completed</span>
             <span class="badge">IUE Graduation Project II · FENG 498</span>
           </div>
           <h3 class="pf-title">AutoEDA — Intelligent Data Quality Analyzer</h3>
@@ -270,6 +340,9 @@
           </ul>
           <div class="tag-row">
             <span class="tag">FastAPI</span><span class="tag">Pandas</span><span class="tag">Celery + Redis</span><span class="tag">PostgreSQL</span><span class="tag">SQLAlchemy</span><span class="tag">asyncpg</span><span class="tag">Docker</span><span class="tag">Pydantic</span>
+          </div>
+          <div class="pf-actions">
+            <a href="https://github.com/benhur-okur/AutoEDA" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View on GitHub</a>
           </div>
         </div>
         <div class="pf-right" aria-hidden="true">
@@ -291,26 +364,25 @@
       </article>
 
       <!-- Featured: preScan -->
-      <article class="project-featured reveal">
+      <article class="project-featured project-featured--alt reveal">
         <div class="pf-left">
           <div class="pf-badges">
             <span class="badge">IUE Graduation Project I · FENG 497</span>
           </div>
-          <h3 class="pf-title">preScan — Breath-Hold Detection from Video</h3>
+          <h3 class="pf-title">preScan — Breath-Hold Event Detection from Video</h3>
           <p class="pf-desc">
-            A deep learning system that detects and classifies breath-hold events from
-            front-facing video recordings. The pipeline runs a <strong>temporal sliding-window
-            CNN</strong> (MobileNetV3-based) over video frames to segment three states —
-            normal breathing, inhale-hold, and exhale-hold — frame by frame,
-            without any dedicated hardware or sensors.
+            An offline research prototype that detects meaningful breath-hold events in
+            front-facing video. A <strong>MobileNetV3-Small</strong> backbone processes 15-frame
+            windows; temporal pooling, thresholding, and minimum-duration filtering convert
+            window probabilities into start, end, and duration segments.
           </p>
           <ul class="pf-highlights">
-            <li><strong>No special hardware:</strong> works on a standard webcam recording.</li>
-            <li><strong>Rigorous validation:</strong> Leave-One-Subject-Out (LOSO) cross-validation across 6 subjects.</li>
-            <li><strong>Interactive UI:</strong> Streamlit dashboard for real-time parameter tuning and inference.</li>
+            <li><strong>Video-only pipeline:</strong> works with standard front-view MP4 recordings and requires no dedicated sensor.</li>
+            <li><strong>Subject-aware evaluation:</strong> developed on 24 videos from 6 subjects, with LOSO used to expose leakage and generalization issues.</li>
+            <li><strong>Reproducible offline demo:</strong> a local Streamlit interface runs inference, visualizes probabilities, and exports detected segments.</li>
           </ul>
           <div class="tag-row">
-            <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">MobileNetV3</span><span class="tag">Streamlit</span><span class="tag">Temporal CNN</span><span class="tag">Deep Learning</span>
+            <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">MobileNetV3-Small</span><span class="tag">Streamlit</span><span class="tag">Temporal Modeling</span><span class="tag">Computer Vision</span>
           </div>
           <div style="margin-top:20px">
             <a href="https://github.com/benhur-okur/preScan-breath-assist" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">View on GitHub</a>
@@ -321,14 +393,13 @@
             <div class="pf-window">
               <div class="pf-window-bar"><span></span><span></span><span></span></div>
               <div class="pf-window-body">
-                <p class="mono dim">sliding window · stride=5 · w=15</p>
+                <p class="mono dim">offline video · stride=5 · window=15</p>
                 <div class="pf-rows" style="margin-top:12px">
-                  <div class="pf-row"><span>frames 0–15</span><b class="ok">NORMAL</b></div>
-                  <div class="pf-row"><span>frames 15–30</span><b class="warn">INHALE_HOLD</b></div>
-                  <div class="pf-row"><span>frames 30–45</span><b class="warn">EXHALE_HOLD</b></div>
-                  <div class="pf-row"><span>frames 45–60</span><b class="ok">NORMAL</b></div>
+                  <div class="pf-row"><span>00:00–00:02</span><b class="ok">NO HOLD</b></div>
+                  <div class="pf-row"><span>00:02–00:07</span><b class="warn">HOLD</b></div>
+                  <div class="pf-row"><span>duration</span><b class="warn">5.0s</b></div>
                 </div>
-                <p class="mono dim" style="margin-top:12px">model: <span class="c-key">MobileNetV3Temporal v4</span></p>
+                <p class="mono dim" style="margin-top:12px">model: <span class="c-key">MobileNetV3Temporal v4</span> · threshold: 0.90</p>
               </div>
             </div>
           </div>
@@ -336,7 +407,7 @@
       </article>
 
       <!-- Featured: LLM Proxy Service -->
-      <article class="project-featured project-featured--alt reveal">
+      <article class="project-featured reveal">
         <div class="pf-left">
           <div class="pf-badges">
             <span class="badge">SOCRadar Internship Project</span>
@@ -344,7 +415,7 @@
           </div>
           <h3 class="pf-title">LLM Proxy Service</h3>
           <p class="pf-desc">
-            A production-ready proxy platform that unifies access to multiple AI providers —
+            A full-stack proxy platform that unifies access to multiple AI providers —
             <strong>Claude (Anthropic), GPT-4 (OpenAI), and Gemini (Google)</strong> — behind
             a single, consistent interface. Built during my internship at SOCRadar, the system
             removes per-provider integration overhead by centralizing authentication, routing,
@@ -380,8 +451,13 @@
         </div>
       </article>
 
-      <!-- Project grid -->
-      <div class="project-grid">
+      <!-- Additional projects stay available without competing with the five case-study cards. -->
+      <details class="project-archive reveal">
+        <summary>
+          <span><strong>More projects</strong> · 6 additional builds</span>
+          <span class="project-archive-action" aria-hidden="true">Explore <b>+</b></span>
+        </summary>
+        <div class="project-grid">
 
         <article class="project-card reveal">
           <div class="pc-top">
@@ -467,7 +543,8 @@
           </div>
         </article>
 
-      </div>
+        </div>
+      </details>
     </section>
 
     <!-- ============ SKILLS ============ -->
@@ -480,7 +557,7 @@
         <div class="skill-group reveal">
           <h4>Languages</h4>
           <div class="tag-row">
-            <span class="tag">Python</span><span class="tag">Java</span><span class="tag">C</span><span class="tag">C#</span><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">Kotlin</span><span class="tag">Dart</span>
+            <span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Dart</span><span class="tag">C</span><span class="tag">Java</span><span class="tag">C#</span><span class="tag">SQL</span><span class="tag">Kotlin</span>
           </div>
         </div>
         <div class="skill-group reveal">
@@ -492,7 +569,7 @@
         <div class="skill-group reveal">
           <h4>Tools &amp; Technologies</h4>
           <div class="tag-row">
-            <span class="tag">Git &amp; GitHub</span><span class="tag">REST APIs</span><span class="tag">JWT</span><span class="tag">OAuth2</span><span class="tag">SSE</span><span class="tag">Celery + Redis</span><span class="tag">Alembic</span><span class="tag">Flask-Migrate</span><span class="tag">Unix/Linux</span><span class="tag">Anthropic SDK</span><span class="tag">OpenAI SDK</span><span class="tag">Google AI SDK</span>
+            <span class="tag">Git &amp; GitHub</span><span class="tag">REST APIs</span><span class="tag">Chrome Extensions (MV3)</span><span class="tag">Docker</span><span class="tag">Supabase</span><span class="tag">Celery + Redis</span><span class="tag">JWT</span><span class="tag">OAuth2</span><span class="tag">Unix/Linux</span>
           </div>
         </div>
         <div class="skill-group reveal">
@@ -504,7 +581,7 @@
         <div class="skill-group reveal">
           <h4>Core Areas</h4>
           <div class="tag-row">
-            <span class="tag">Backend Development</span><span class="tag">Full-Stack</span><span class="tag">Mobile Development</span><span class="tag">API Design</span><span class="tag">Distributed Systems</span><span class="tag">Machine Learning</span><span class="tag">Deep Learning</span><span class="tag">Data Analysis</span>
+            <span class="tag">Full-Stack Development</span><span class="tag">Backend Development</span><span class="tag">AI Application Development</span><span class="tag">Mobile Development</span><span class="tag">Browser Extensions</span><span class="tag">API Design</span><span class="tag">Machine Learning</span>
           </div>
         </div>
       </div>
@@ -518,16 +595,12 @@
       </div>
       <div class="contact-wrap reveal">
         <div class="contact-intro">
-          <h3>Let's build something.</h3>
-          <p>I'm open to software engineering roles and interesting collaborations. The fastest way to reach me is email — I usually reply within a day.</p>
+          <h3>Let's talk.</h3>
+          <p>I'm open to full-stack and AI-focused software engineering roles, as well as thoughtful collaborations. Email is the best way to reach me.</p>
           <ul class="contact-list">
             <li>
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
               <a href="mailto:benhurokur0@gmail.com">benhurokur0@gmail.com</a>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:+905306820646">+90 530 682 06 46</a>
             </li>
             <li>
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>

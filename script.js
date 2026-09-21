@@ -19,10 +19,19 @@
   const menuToggle = document.getElementById('menuToggle');
   const menuLinks = document.getElementById('menuLinks');
 
-  menuToggle.addEventListener('click', () => menuLinks.classList.toggle('open'));
+  function setMenu(open) {
+    menuLinks.classList.toggle('open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+
+  menuToggle.addEventListener('click', () => setMenu(!menuLinks.classList.contains('open')));
   menuLinks.querySelectorAll('a').forEach((link) =>
-    link.addEventListener('click', () => menuLinks.classList.remove('open'))
+    link.addEventListener('click', () => setMenu(false))
   );
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setMenu(false);
+  });
 
   /* ---------- Header shadow + scroll progress ---------- */
   const header = document.getElementById('header');

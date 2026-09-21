@@ -29,6 +29,9 @@ Tarayıcıda `index.html`'i açmak siteyi olduğu gibi çalıştırır.
   mezunu (Haziran 2026, tam burslu), SOCRadar'da yazılım mühendisliği stajı
   (Tem–Ağu 2025), freelance daemon sistemleri geliştirme (Tem 2024 – Ağu 2025,
   self-employed). Bunları "öğrenci" olarak yazma.
+- Ana profesyonel konumlandırma full-stack engineering ve AI-powered systems.
+  Mobil geliştirme destekleyici ürün deneyimidir; ayrı bir ana kimlik gibi
+  sunulmaz. Dil seviyesi: Turkish (native), English (B2), German (basic).
 - Proje kartındaki iddiaları GitHub'daki gerçek repo içeriğiyle doğrula
   (README, dosya listesi). Repo adı bazen güncel değil.
 
@@ -37,18 +40,18 @@ Tarayıcıda `index.html`'i açmak siteyi olduğu gibi çalıştırır.
 İki tip var:
 
 - **Featured** (`.project-featured`) — büyük kart, solda anlatım + sağda kod/UI
-  mockup'ı. Sıra: Vocabify, AutoEDA, preScan, LLM Proxy Service.
+  mockup'ı. Sıra: ReelVocab, Vocabify, AutoEDA, preScan, LLM Proxy Service.
 - **Grid** (`.project-card`) — `.project-grid` içindeki küçük kartlar.
 
 Featured kartlar sağ/sol dönüşümlü diziliyor: bir kart normal, sonraki
 `.project-featured--alt`. Araya kart eklersen sonrasındaki tüm kartların
 sınıflarını yeniden sırala, yoksa iki kart üst üste aynı yöne bakar.
 
-Vocabify birinci sırada duran flagship üründür (`#vocabify`,
-`.project-featured--hero`) — Flutter ile geliştirilen, henüz yayınlanmamış,
-film/dizi sahnelerinden İngilizce kelime öğreten mobil uygulama. Hero'daki
-"Currently building Vocabify" şeridi de buraya bağlanır. Yeni proje eklerken
-Vocabify'ı ilk sıradan indirme.
+ReelVocab birinci sırada duran flagship üründür (`#reelvocab`,
+`.project-featured--hero`) — Chrome MV3 uzantısıdır ve ilk Web Store
+gönderimine hazırlanmaktadır. Vocabify ikinci sırada duran (`#vocabify`) Flutter
+mobil uygulamasıdır ve özel Android alpha testindedir. Hero'daki durum şeridi
+ikisine de bağlanır. Yeni proje eklerken bu iki ürünü ilk iki sıradan indirme.
 
 ## Vocabify hakkında yazarken
 
@@ -60,7 +63,7 @@ satır her zaman klipte duyulan satırdır; kullanıcı üç şıkla kendini
 değerlendirir (I knew it / Not sure / New to me); ifadenin **o sahnedeki**
 anlamı ve nüansı cevaptan sonra açılır; vadesi gelen ifadeler ayrı bir ekranda
 değil, feed'in içinde tekrar gelir; puanı yalnızca sunucu yazar (RLS).
-27 sahne, 303 ifade, 73 test.
+27 sahne, 303 ifade, test klasöründe 246 test çağrısı / 35 test dosyası.
 
 Yazma:
 - **Türkçe karşılık yok** — uygulama tamamen İngilizce, anlam İngilizce açıklanıyor.
@@ -71,7 +74,37 @@ Yazma:
   YouTube vb.) sitede geçmemeli. Mockup'taki ifade/anlam/nüans metinleri
   uygulamanın gerçek verisinden alındı; değiştirmen gerekirse yenisini de
   kullanıcıdan doğrulat, altyazı satırı bilerek soyut çubuk olarak duruyor.
-- **Çıkış tarihi, indirme/kullanıcı sayısı yok.** iOS önce, Android sonra.
+- **Çıkış tarihi, indirme/kullanıcı sayısı yok.** Mevcut doğru durum: APK küçük
+  bir arkadaş grubuna Drive üzerinden gönderiliyor ve gerçek Android cihazlarda
+  geri bildirim toplanıyor. APK debug anahtarıyla imzalı olduğu için "released"
+  veya "production Android release" deme. TestFlight build'i henüz yüklenmedi;
+  "on TestFlight" deme.
+
+## ReelVocab hakkında yazarken
+
+Chrome Manifest V3 uzantısıdır. İngilizce YouTube altyazılarında kelimelerinden
+tahmin edilemeyen ifadeleri seçer ve sahnedeki muhtemel anlamlarını gösterir.
+TypeScript, esbuild, Mistral API ve BYOK kullanır. Anahtar
+`chrome.storage.local` içinde kalır; model çağrısı service worker'dan yapılır.
+Manuel/ASR altyazı ayrımı, birden fazla YouTube altyazı biçimi, SPA gezinmesi,
+yerel önbellek, şema doğrulama ve altı deterministik çıktı kapısı vardır.
+
+- Bugünkü durum **Chrome Web Store release candidate / submission preparation**.
+  Gerçek gönderim yapılmadan "in review", onaylanmadan "available" deme.
+- Repo ve Web Store bağlantıları kullanıcı public olacağına karar verene kadar
+  eklenmez.
+- Kullanıcı/indirme sayısı, yayın tarihi veya doğruluk oranı uydurulmaz.
+
+## preScan hakkında yazarken
+
+Kaynak repo: `https://github.com/benhur-okur/preScan-breath-assist`.
+Bu proje ses/Librosa projesi değildir. Offline, front-view MP4 videolarda
+breath-hold event detection yapar. Final model `MobileNetV3Temporal v4`:
+MobileNetV3-Small frame backbone, 15-frame window, max temporal pooling, stride
+5, deployment threshold 0.90 ve minimum hold süresi 2.0 saniye. Çıktı
+start/end/duration içeren anlamlı segmentlerdir. Veri 24 video ve 6 denekten
+oluşur; geliştirmede LOSO kullanılmıştır. Streamlit arayüzü local/offline
+demo'dur, real-time sistem değildir. Klinik geçerlilik iddiası yoktur.
 
 ## Değişiklikten sonra
 

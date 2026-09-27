@@ -48,10 +48,12 @@ Featured kartlar sağ/sol dönüşümlü diziliyor: bir kart normal, sonraki
 sınıflarını yeniden sırala, yoksa iki kart üst üste aynı yöne bakar.
 
 ReelVocab birinci sırada duran flagship üründür (`#reelvocab`,
-`.project-featured--hero`) — Chrome MV3 uzantısıdır ve ilk Web Store
-gönderimine hazırlanmaktadır. Vocabify ikinci sırada duran (`#vocabify`) Flutter
-mobil uygulamasıdır ve özel Android alpha testindedir. Hero'daki durum şeridi
-ikisine de bağlanır. Yeni proje eklerken bu iki ürünü ilk iki sıradan indirme.
+`.project-featured--hero`) — Chrome MV3 uzantısıdır ve Chrome Web Store'da
+yayımdadır. Mağaza bağlantısı:
+`https://chromewebstore.google.com/detail/ajfibhoghogflcbdpnfkccnacimejjgf`.
+Vocabify ikinci sırada duran (`#vocabify`) Flutter mobil uygulamasıdır ve özel
+Android alpha testindedir. Hero'daki durum şeridi ikisine de bağlanır. Yeni
+proje eklerken bu iki ürünü ilk iki sıradan indirme.
 
 ## Vocabify hakkında yazarken
 
@@ -89,10 +91,9 @@ TypeScript, esbuild, Mistral API ve BYOK kullanır. Anahtar
 Manuel/ASR altyazı ayrımı, birden fazla YouTube altyazı biçimi, SPA gezinmesi,
 yerel önbellek, şema doğrulama ve altı deterministik çıktı kapısı vardır.
 
-- Bugünkü durum **Chrome Web Store release candidate / submission preparation**.
-  Gerçek gönderim yapılmadan "in review", onaylanmadan "available" deme.
-- Repo ve Web Store bağlantıları kullanıcı public olacağına karar verene kadar
-  eklenmez.
+- Bugünkü durum **Chrome Web Store'da yayımlanmış / available**. Mağaza
+  bağlantısını ReelVocab CTA'sında ve güncel durum metinlerinde kullan.
+- Kaynak repo bağlantısı kullanıcı public olacağına karar verene kadar eklenmez.
 - Kullanıcı/indirme sayısı, yayın tarihi veya doğruluk oranı uydurulmaz.
 
 ## preScan hakkında yazarken
